@@ -20,4 +20,6 @@
 	"bootcmd_romfs=setenv bootargs ${bootargs} ${bootargs_romfs};" \
 	"bootm 0x08044000 - 0x08042000\0"
 
+#define CONFIG_BOOTCOMMAND    "bootm 0x8040000 - 0x8030000\0"
+
 #endif /* __CONFIG_H */
