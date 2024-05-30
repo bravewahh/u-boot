@@ -1,0 +1,19 @@
+if TARGET_CSK6011A_NANO
+
+config SYS_BOARD
+	string
+	default "csk6011a-nano"
+
+config SYS_VENDOR
+	string
+	default "listenai"
+
+config SYS_SOC
+	string
+	default "csk6011a"
+
+config SYS_CONFIG_NAME
+	string
+	default "csk6011a-nano"
+
+endif

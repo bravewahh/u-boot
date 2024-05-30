@@ -1,0 +1,21 @@
+if ARCH_CSK6
+
+config CSK6011A
+	bool "csk6011a family"
+	select CLK
+	select DM_GPIO
+	select DM_RESET
+	select MISC
+	select PINCTRL
+	# select PINCTRL_CSK6
+	select RAM
+	# select CSK6_RCC
+	# select CSK6_PSRAM
+	# select CSK6_SERIAL
+	# select CSK6_TIMER
+	select SYS_ARCH_TIMER
+
+source "arch/arm/mach-csk6/csk6011a/Kconfig"
+
+
+endif

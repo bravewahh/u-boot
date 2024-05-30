@@ -1946,6 +1946,13 @@ config ARCH_STM32
 	select DM_SERIAL
 	imply CMD_DM
 
+config ARCH_CSK6
+	bool "Support LISTENAI mcu with cortex M"
+	select CPU_V7M
+	select DM
+	select DM_SERIAL
+	imply CMD_DM
+
 config ARCH_STI
 	bool "Support STMicroelectronics SoCs"
 	select BLK
@@ -2291,6 +2298,10 @@ source "arch/arm/mach-snapdragon/Kconfig"
 source "arch/arm/mach-socfpga/Kconfig"
 
 source "arch/arm/mach-sti/Kconfig"
+
+source "arch/arm/mach-csk6/Kconfig"
+
+source "board/listenai/csk6011a-nano/Kconfig"
 
 source "arch/arm/mach-stm32/Kconfig"
 

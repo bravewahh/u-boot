@@ -1,0 +1,8 @@
+if CSK6011A
+
+config TARGET_CSK6011A_NANO
+	bool "ListenAI csk6011a-nano-board"
+
+source "board/listenai/csk6011a-nano/Kconfig"
+
+endif

@@ -1,0 +1,49 @@
+/dts-v1/;
+#include "armv7-m.dtsi"
+
+/ {
+    model = "lisenai,csk6";
+
+    chosen {
+        stdout-path = "serial0: 115200n8";
+    };
+
+    aliases {
+        serial0 = &uart0;
+    };
+
+    memory@28000000 {
+        device_type = "memory";
+		reg = <0x28000000 0x28000000 0xBFFFF>;
+	};
+
+    uart0: serial@45000000 {
+        bootph-all;
+        compatible = "lisenai,csk6-uart", "ns16550";
+        clock-frequency = <24000000>;
+        reg = <0x45000000 0x45000000>;
+        reg-offset = <0>;
+        reg-shift = <2>;
+        reg-io-width = <4>;
+    };
+    spi0: spi@46400000 {
+        compatible = "andestech,atcspi200";
+        reg = <0x46400000 0x46400000>;
+        #address-cells = <1>;
+        #size-cells = <0>;
+        // num-cs = <1>;
+        // clocks = <&spiclk>;
+        interrupts = <3 4>;
+        flash@0 {
+            compatible = "jedec,spi-nor";
+            spi-max-frequency = <100000000>;
+            reg = <0 0x18000000>;
+            spi-cpol;
+            spi-cpha;
+        };
+    };
+};
+
+&systick {
+    status = "okay";
+};
